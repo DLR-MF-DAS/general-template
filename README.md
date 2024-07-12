@@ -11,6 +11,8 @@ After initializing your project from this template I would advice to do the foll
 
 # GitHub Actions
 
+CI/CD tasks for your project will be handled by GitHub Actions which are CI/CD pipelines described in a YAML based language. Here we have a list of them that you must include in your project and make sure that they are working correctly.
+
 ## Testing
 
 Taken care of in `.github/workflows/python-app.yml`. By default `pytest` is used. Find tests under `test/` and test your code religiously. No untested or undocumented code is allowed.
