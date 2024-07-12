@@ -1,5 +1,6 @@
-# general-template
-A general Python project template for MF-DAS
+# Generic Python Template
+
+A generic Python project template for MF-DAS. Use this for "standard" Python packages.
 
 After initializing your project from this template I would advice to do the following:
 
@@ -8,4 +9,16 @@ After initializing your project from this template I would advice to do the foll
 * Change the project name and other information in the `pyproject.toml`.
 * Open .githubt/workflows/pdoc.yml in an editor and change `project_name` to the proper project name.
 
-The template will take care of building and publishing project documentation from Python docstrings. You need to use the the `numpy` docstring format. Find the description of it [here](https://numpydoc.readthedocs.io/en/latest/format.html). The documentation will be built and published under dlr-mf-das.github.io/general-template where you need to replace `general-template` with your repository name.
+# GitHub Actions
+
+## Testing
+
+Taken care of in `.github/workflows/python-app.yml`. By default `pytest` is used. Find tests under `test/` and test your code religiously. No untested or undocumented code is allowed.
+
+## Documentation Building
+
+Taken care of in `.github/workflows/pdoc.yml`. The workflow will take care of building and publishing project documentation from Python docstrings. You need to use the the `numpy` docstring format. Find the description of it [here](https://numpydoc.readthedocs.io/en/latest/format.html). The documentation will be built and published under dlr-mf-das.github.io/general-template where you need to replace `general-template` with your repository name.
+
+## Python Package Publishing
+
+Taken care of in `.github/workflows/python-publish.yml`. This workflow is executed every time a new release is created. Make sure to update the version number in `pyproject.toml` before creating a release. Because this number is used to create the Python package archive that is published to MF-DAS pypi. If the package with that version number was previously uploaded to PyPi this workflow will fail.
